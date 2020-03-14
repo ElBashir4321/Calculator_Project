@@ -35,7 +35,7 @@ pipeline {
       stage('Get info from POM') {
           steps {
             script {
-                pom = file: 'pom.xml'
+                pom = readMavenPom file: 'pom.xml'
                 groupId = pom.groupId
                 artifactId = pom.artifactId
                 packaging = pom.packaging
